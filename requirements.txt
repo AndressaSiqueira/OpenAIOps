@@ -1,0 +1,4 @@
+azure-functions
+openai
+azure-monitor-opentelemetry
+azure-identity
