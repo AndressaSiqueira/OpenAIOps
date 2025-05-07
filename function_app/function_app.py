@@ -7,8 +7,11 @@ from opentelemetry.trace import SpanKind, Status, StatusCode
 
 # Configura o Azure Monitor para enviar dados de rastreamento para o Application Insights
 configure_azure_monitor(
-    connection_string="InstrumentationKey=3c509b15-fe24-4d39-b1ef-9edd3c3518fb;IngestionEndpoint=https://eastus2-3.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;ApplicationId=50e58161-a4c6-47ec-8a10-503bc2a3cce6"
-)
+    connection_string="InstrumentationKey=3c509b15-fe24-4d39-b1ef-9edd3c3518fb;IngestionEndpoint=https://eastus2-3.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;ApplicationId=50e58161-a4c6-47ec-8a10-503bc2a3cce6",
+    resource=Resource.create({
+        "service.name": "OpenAI_FunctionApp",  # Nome amigável para sua função
+        "service.instance.id": "instance-1"   # Identificador único da instância
+    }))
 
 # Configuração da API do Azure OpenAI
 AZURE_OPENAI_ENDPOINT = "https://dessa.openai.azure.com"
