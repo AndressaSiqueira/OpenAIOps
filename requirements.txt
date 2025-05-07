@@ -1,4 +1,5 @@
 azure-functions
+opentelemetry-distro
 openai
 azure-monitor-opentelemetry
 azure-identity
