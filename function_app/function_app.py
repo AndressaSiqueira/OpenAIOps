@@ -2,6 +2,7 @@ from openai import AzureOpenAI
 from azure.monitor.opentelemetry import configure_azure_monitor
 from opentelemetry import trace
 from opentelemetry.trace import SpanKind, Status, StatusCode
+from opentelemetry.sdk.resources import Resource  # Importação necessária
 
 # ========== CONFIGURAÇÃO ==========
 
@@ -12,7 +13,6 @@ configure_azure_monitor(
         "service.name": "OpenAI_FunctionApp",  # Nome amigável para sua função
         "service.instance.id": "instance-1"   # Identificador único da instância
     }))
-
 # Configuração da API do Azure OpenAI
 AZURE_OPENAI_ENDPOINT = "https://dessa.openai.azure.com"
 AZURE_OPENAI_API_KEY = "RMiQPBLVTZkxPwYJrySUbGCxx9EoxEfUrMIz7AC7MNN4VBvxuByEJQQJ99BEACHYHv6XJ3w3AAABACOGwqRI"
