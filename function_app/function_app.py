@@ -25,7 +25,7 @@ client = AzureOpenAI(
 )
 
 # Obtém o tracer para rastrear a chamada
-tracer = trace.get_tracer(__name__)
+tracer = trace.get_tracer("openai_integration")
 
 def ask_openai(prompt: str) -> str:
     # Cria um span para rastrear a dependência como uma chamada externa (HTTP)
