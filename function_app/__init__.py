@@ -2,7 +2,7 @@ import azure.functions as func
 from .function_app import ask_openai
 from opentelemetry import trace
 
-tracer = trace.get_tracer(__name__)
+tracer = trace.get_tracer("http_request_handler")
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     prompt = req.params.get('prompt')
